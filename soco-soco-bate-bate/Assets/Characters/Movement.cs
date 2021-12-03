@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private Rigidbody2D rb2d;
-    public float speed = 0.01f;
+    private Rigidbody2D rb;
+    private float speed = 55f;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -40,10 +40,9 @@ public class Movement : MonoBehaviour
         {
             x = x + speed;
         }
-
-        var newPosition = new Vector2(transform.position.x + x, transform.position.y + y);
-
-        transform.position = newPosition;
+        Vector3 tempVect = new Vector2(x, y);
+        tempVect = tempVect.normalized * speed * Time.deltaTime;
+        rb.MovePosition(transform.position + tempVect);
     }
 
     private bool AnyUpKeyPressed()
