@@ -24,10 +24,14 @@ public class Movement : MonoBehaviour
     void Update()
     {
         Move();
+        Punch();
     }
 
     private void Move()
     {
+        if (!CanMove())
+            return;
+
         float x = 0;
         float y = 0;
         if (AnyUpKeyPressed())
@@ -38,11 +42,11 @@ public class Movement : MonoBehaviour
         {
             y = y - speed;
         }
-        if(AnyLeftKeyPressed())
+        if (AnyLeftKeyPressed())
         {
             x = x - speed;
         }
-        if(AnyRightKeyPressed())
+        if (AnyRightKeyPressed())
         {
             x = x + speed;
         }
@@ -61,13 +65,21 @@ public class Movement : MonoBehaviour
             animator.SetBool("IsWalking", true);
         }
 
-        if(x < 0)
+        if (x < 0)
         {
             Flip(Direction.Left);
         }
-        if(x > 0)
+        if (x > 0)
         {
             Flip(Direction.Right);
+        }
+    }
+
+    public void Punch()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            animator.SetBool("IsPunching", true);
         }
     }
 
@@ -80,7 +92,7 @@ public class Movement : MonoBehaviour
         };
 
         bool pressed = false;
-        foreach(var key in upKeys)
+        foreach (var key in upKeys)
         {
             pressed = Input.GetKey(key);
 
@@ -164,5 +176,12 @@ public class Movement : MonoBehaviour
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
             isFlipped = false;
         }
+    }
+
+    private bool CanMove()
+    {
+        bool isPunching = animator.GetBool("IsPunching");
+
+        return !isPunching;
     }
 }
