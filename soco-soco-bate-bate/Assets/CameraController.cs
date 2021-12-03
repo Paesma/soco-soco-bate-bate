@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
     public float xMin;
     public float yMax;
     public float yMin;
-    private float cameraSpeed = 0.15f;
+    private float cameraSpeed = 0.05f;
     private float urgencySpeed = 8f;
     public bool urgencyCamera = false;
 
@@ -41,19 +41,20 @@ public class CameraController : MonoBehaviour
             }
         }
 
-        if (Math.Abs(transform.position.x - player.transform.position.x) > 1)
+        if (Math.Abs(transform.position.x - player.transform.position.x) > 8)
         {
-            currentX = (int)player.transform.position.x;
+            var calculation = transform.position.x - player.transform.position.x > 0 ? 8 : -8;
+            currentX = (int)player.transform.position.x + calculation;
         }
 
-        MoveInstantly();
-        //MoveSlowly();
+        //MoveInstantly();
+        MoveSlowly();
     }
 
     public void MoveInstantly()
     {
         var pos = transform.position;
-        pos.x = player.transform.position.x + 1;
+        pos.x = currentX;
         transform.position = pos;
     }
 
