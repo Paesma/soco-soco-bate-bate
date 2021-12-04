@@ -61,6 +61,20 @@ public class CameraController : MonoBehaviour
     public void MoveSlowly()
     {
         var pos = transform.position;
+        if (pos.x <= xMin)
+        {
+            pos.x = pos.x + 0.0003f;
+            SetPosition(pos);
+            return;
+        }
+        
+        if(pos.x >= xMax)
+        {
+            pos.x = pos.x - 0.0003f;
+            SetPosition(pos);
+            return;
+        }
+
         if (currentX > (int)pos.x)
         {
             pos.x += cameraSpeed;
@@ -78,7 +92,11 @@ public class CameraController : MonoBehaviour
         //{
         //    pos.y -= !urgencyCamera ? cameraSpeed : cameraSpeed * urgencySpeed;
         //}
+        SetPosition(pos);
+    }
 
+    private void SetPosition(Vector3 pos)
+    {
         transform.position = pos;
     }
 
