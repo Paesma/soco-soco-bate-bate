@@ -12,6 +12,8 @@ public class Movement : MonoBehaviour
 
     public bool isFlipped = false;
     public bool isWalking = false;
+    public bool isPunching = false;
+    public bool isKicking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,19 @@ public class Movement : MonoBehaviour
     {
         Move();
         Punch();
+        Kick();
+    }
+
+    private void FixedUpdate()
+    {
+        UpdateAnimations();
+    }
+
+    private void UpdateAnimations()
+    {
+        animator.SetBool("IsWalking", isWalking);
+        animator.SetBool("IsPunching", isPunching);
+        animator.SetBool("IsKicking", isKicking);
     }
 
     private void Move()
@@ -57,12 +72,10 @@ public class Movement : MonoBehaviour
         if (tempVect.x == 0 && tempVect.y == 0)
         {
             isWalking = false;
-            animator.SetBool("IsWalking", isWalking);
         }
         else
         {
             isWalking = true;
-            animator.SetBool("IsWalking", true);
         }
 
         if (x < 0)
@@ -77,9 +90,23 @@ public class Movement : MonoBehaviour
 
     public void Punch()
     {
+        if (!CanPunch())
+            return;
+
         if (Input.GetKeyDown(KeyCode.P))
         {
-            animator.SetBool("IsPunching", true);
+            isPunching = true;
+        }
+    }
+
+    public void Kick()
+    {
+        if (!CanKick())
+            return;
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            isKicking = true;
         }
     }
 
@@ -180,8 +207,16 @@ public class Movement : MonoBehaviour
 
     private bool CanMove()
     {
-        bool isPunching = animator.GetBool("IsPunching");
+        return !isPunching && !isKicking;
+    }
 
+    private bool CanKick()
+    {
         return !isPunching;
+    }
+
+    private bool CanPunch()
+    {
+        return !isKicking;
     }
 }

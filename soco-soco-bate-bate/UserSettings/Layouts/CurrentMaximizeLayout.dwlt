@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 61480
+  controlID: 84875
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 61416
+  controlID: 84876
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -417,9 +417,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -63.749207, y: 17.564362, z: 0.7244032}
+    m_Target: {x: -76.4778, y: 21.126099, z: -0.46598762}
     speed: 2
-    m_Value: {x: -63.749207, y: 17.564362, z: 0.7244032}
+    m_Value: {x: -76.4778, y: 21.126099, z: -0.46598762}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -470,9 +470,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.505196
+    m_Target: 17.58233
     speed: 2
-    m_Value: 7.505196
+    m_Value: 17.58233
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -519,8 +519,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 8
     y: 81
-    width: 799
-    height: 457
+    width: 729
+    height: 390
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -557,14 +557,14 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: 4660275502634445001, guid: 61412f521f9eb624c83531f2d22fbda3, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.7065984
+    - e00: 0.8559213
       e01: 0
       e02: 0
-      e03: -34.404556
+      e03: 68.473755
       e10: 0
-      e11: 0.7065984
+      e11: 0.8559213
       e12: 0
-      e13: 142.28069
+      e13: 183.93839
       e20: 0
       e21: 0
       e22: 1
@@ -646,7 +646,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 59078
+  m_LastSelectedObjectID: 66078
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -671,7 +671,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 61481
+  controlID: 84826
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 61482
+  controlID: 84798
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -716,8 +716,8 @@ MonoBehaviour:
     y: 0
     width: 338
     height: 527
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -756,7 +756,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 466afeffe6d2feff166bffff80c0ffff1ac4ffff38c7ffff12fbffff
+      m_ExpandedIDs: 9c77fdff466afeffe6d2feff166bffff80c0ffff1ac4ffff38c7ffff12fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -837,10 +837,10 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: 160
+    m_CachedPref: 269
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 59078
+  m_LastInspectedObjectInstanceID: 66078
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
@@ -866,8 +866,8 @@ MonoBehaviour:
     y: 527
     width: 694
     height: 264
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -915,21 +915,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Personagens/Axel Stone
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Personagens/Axel Stone
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\UnityProjects\soco-soco-bate-bate\soco-soco-bate-bate
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: be8e0000
-    m_LastClickedID: 36542
+    scrollPos: {x: 0, y: 117}
+    m_SelectedIDs: 30c20000
+    m_LastClickedID: 49712
     m_ExpandedIDs: 00000000be8e000034ae000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -983,8 +983,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c6e60000
-    m_LastClickedInstanceID: 59078
+    m_SelectedInstanceIDs: 1e020100
+    m_LastClickedInstanceID: 66078
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000588f0000
     m_RenameOverlay:
@@ -1010,7 +1010,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 11}
+    m_ScrollPosition: {x: 0, y: 2441}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 118
