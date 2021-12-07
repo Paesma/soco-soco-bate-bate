@@ -15,6 +15,8 @@ public class Movement : MonoBehaviour
     public bool isPunching = false;
     public bool isKicking = false;
 
+    public GameObject hadoukenPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,6 +98,14 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             isPunching = true;
+            var hadouken = GameObject.Instantiate(hadoukenPrefab);
+            var pos = transform.localPosition;
+            pos.x += 2;
+            pos.y += 2;
+            hadouken.transform.localPosition = pos;
+            var throwable = hadouken.AddComponent<ThrowableObject>();
+            throwable.SetDirection(isFlipped ? Direction.Left : Direction.Right);
+            throwable.SetSpeed(100);
         }
     }
 
