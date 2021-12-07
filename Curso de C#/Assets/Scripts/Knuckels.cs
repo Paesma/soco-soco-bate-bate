@@ -54,7 +54,6 @@ public class Knuckels : MonoBehaviour
             estaSocando = true;
             player.velocity = Vector2.zero;
         }
-
     }
     public void FimDoSoco()
     {
