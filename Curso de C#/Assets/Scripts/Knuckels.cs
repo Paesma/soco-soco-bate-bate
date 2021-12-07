@@ -4,37 +4,60 @@ using UnityEngine;
 
 public class Knuckels : MonoBehaviour
 {
-    
+
     public float Velocidade;
+    private Animator animator;
+    private Rigidbody2D player;
+    private SpriteRenderer sprite;
+
+    bool estaSocando = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        player = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Rigidbody2D Player = GetComponent<Rigidbody2D>();
         float hori = Input.GetAxis("Horizontal");
-        Player.velocity = new Vector2(hori * Velocidade, Player.velocity.y);
 
-        if(hori>0)
+        //!estasocando - estasocando == false
+        if (!estaSocando)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
-        }
-        else if(hori<0)
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
+            player.velocity = new Vector2(hori * Velocidade, player.velocity.y);
         }
 
-        if(hori >0 || hori <0)
+        if (hori > 0)
         {
-            GetComponent<Animator>().SetBool("andando", true);
+            sprite.flipX = false;
         }
-        else 
+        else if (hori < 0)
         {
-            GetComponent<Animator>().SetBool("andando", false);
-        }        
+            sprite.flipX = true;
+        }
+
+        if (hori > 0 || hori < 0)
+        {
+            animator.SetBool("andando", true);
+        }
+        else
+        {
+            animator.SetBool("andando", false);
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            animator.SetTrigger("Attack1");
+            estaSocando = true;
+            player.velocity = Vector2.zero;
+        }
+
+    }
+    public void FimDoSoco()
+    {
+        estaSocando = false;
     }
 }
