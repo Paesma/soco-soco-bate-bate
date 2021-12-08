@@ -56,12 +56,7 @@ public class Knuckels : MonoBehaviour
                 (velocidadeAtual.x > -velocidadeMax && !andandoPraFrente)
                 )
             {
-                float velocidade = (hori * multiplicadorAnalogico) * (aceleracao * aceleracao);
-
-                velocidadeAtual.x += velocidade;
-                velocidadeAtual.x = (float)Math.Round(velocidadeAtual.x, 2);
-
-                player.velocity = velocidadeAtual;
+                player.AddForce(new Vector2(hori * (aceleracao), 0));
 
                 this.velocidadeAtual = velocidadeAtual.x;
             }

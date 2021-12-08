@@ -638,13 +638,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f82ded895989b54cbfb94971de4e5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Velocidade: 8
+  velocidadeMax: 20
+  multiplicadorAnalogico: 1
+  aceleracao: 0.45
   Solo:
     serializedVersion: 2
     m_Bits: 256
   ChecadorDeSolo: {fileID: 312889493}
   ForcaDoPulo: 1250
   AnguloDeContato: 0.2
+  velocidadeAtual: 0
+  animationSpeed: 0.1
+  animationMultiplicator: 0.1
+  minAnimationSpeed: 0.5
+  maxSpeedAnimationMultiplicator: 2.6
 --- !u!70 &473692388
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1258,7 +1265,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 104.28317
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
