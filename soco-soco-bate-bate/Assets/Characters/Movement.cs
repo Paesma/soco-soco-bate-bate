@@ -2,6 +2,7 @@ using Assets.Enums;
 using Assets.Extensions;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -9,17 +10,18 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private float speed = 55f;
+    private ComboController comboController;
 
     public bool isFlipped = false;
     public bool isWalking = false;
-    public bool isPunching = false;
-    public bool isKicking = false;
+    public bool isAttacking = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        comboController = GetComponent<ComboController>();
     }
 
     // Update is called once per frame
@@ -37,9 +39,7 @@ public class Movement : MonoBehaviour
 
     private void UpdateAnimations()
     {
-        animator.SetBool("IsWalking", isWalking);
-        animator.SetBool("IsPunching", isPunching);
-        animator.SetBool("IsKicking", isKicking);
+        SetAnimation("IsWalking", isWalking);
     }
 
     private void Move()
@@ -90,24 +90,30 @@ public class Movement : MonoBehaviour
 
     public void Punch()
     {
-        if (!CanPunch())
-            return;
-
         if (Input.GetKeyDown(KeyCode.P))
         {
-            isPunching = true;
+            SetAnimationTrigger("IsPunching");
         }
     }
 
     public void Kick()
     {
-        if (!CanKick())
-            return;
-
         if (Input.GetKeyDown(KeyCode.I))
         {
-            isKicking = true;
+            comboController.Attack();
+            isWalking = false;
+            isAttacking = true;
         }
+    }
+
+    public void SetAnimation(string animationName, bool isActive)
+    {
+        animator.SetBool(animationName, isActive);
+    }
+
+    public void SetAnimationTrigger(string triggerName)
+    {
+        animator.SetTrigger(triggerName);
     }
 
     private bool AnyUpKeyPressed()
@@ -205,18 +211,8 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private bool CanMove()
+    public bool CanMove()
     {
-        return !isPunching && !isKicking;
-    }
-
-    private bool CanKick()
-    {
-        return !isPunching;
-    }
-
-    private bool CanPunch()
-    {
-        return !isKicking;
+        return !isAttacking;
     }
 }
