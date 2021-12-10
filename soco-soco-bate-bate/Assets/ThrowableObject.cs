@@ -34,4 +34,14 @@ public class ThrowableObject : MonoBehaviour
     {
         this.speed = speed;
     }
+
+
+    //var hadouken = GameObject.Instantiate(hadoukenPrefab);
+    //var pos = transform.localPosition;
+    //pos.x += 2;
+    //        pos.y += 2;
+    //        hadouken.transform.localPosition = pos;
+    //        var throwable = hadouken.AddComponent<ThrowableObject>();
+    //throwable.SetDirection(isFlipped? Direction.Left : Direction.Right);
+    //        throwable.SetSpeed(100);
 }
